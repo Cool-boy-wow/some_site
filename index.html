@@ -1,3 +1,20 @@
+<?php
+
+$email = $_POST['email'];
+
+$email = htmlspecialchars($email);
+
+$email = urldecode($email);
+
+$email = trim($email);
+//echo $fio;
+//echo "<br>";
+//echo $email;
+if (mail("example@mail.ru", "Заявка с сайта",  E-mail: ".$email ,"From: anvar.rakhmonoff@yandex.ru \r\n"))
+ {     echo "сообщение успешно отправлено";
+} else {
+    echo "при отправке сообщения возникли ошибки";
+}?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,9 +114,9 @@
 	<div class="row" >
 		<div class="col-sm-4" id="fot_left">
 			<p style="text-align:left;">Подпишись на рассылку и<br> получай ежемесячные бонусы и анонсы<br> новинок раньше других!</p>
-			<form method="POST"  id="form">
+			<form method="POST" action="index.html" id="form">
 				<label>E-mail *</label>
-				<input type="text" name="e-mail"><br><br>
+				<input type="text" name="email"><br><br>
 				
 				<input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes" checked>
 
